@@ -1,0 +1,18 @@
+local player = game.Players.LocalPlayer
+
+-- Function to check if a CoreGui with a descendant named "Cmdbar_2" exists
+local function checkCoreGui()
+	local coreGui = game:GetService("CoreGui") for _, gui in ipairs(coreGui:GetDescendants()) do
+		if gui.Name == "Cmdbar_2" then
+			-- Check if the player is still in the game
+			if player and player:IsDescendantOf(game) then
+				-- Kick the local player if the descendant "Cmdbar_2" is found
+				player:Kick("Instances Found 1: Cmdbar_2.")
+			end
+			break
+		end
+	end
+end
+
+-- Call the checkCoreGui function
+checkCoreGui()
